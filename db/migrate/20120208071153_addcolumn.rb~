@@ -1,0 +1,9 @@
+class Addcolumn < ActiveRecord::Migration
+  def up
+  add_column :artis, :except, :string
+  add_column :artis, :loaction, :string
+  end
+
+  def down
+  end
+end

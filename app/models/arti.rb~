@@ -1,0 +1,7 @@
+class Arti < ActiveRecord::Base
+validates :title, :presence => true
+validates :body, :presence => true
+validates :published_at, :presence => true
+#validates :title, :body, :published_at, :presence => true
+validates :title, :uniqueness => true
+end

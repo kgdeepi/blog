@@ -1,0 +1,4 @@
+<h1>Editing Password</h1>
+<%= render @user %>
+<%= link_to 'Back', articles_path %>
+

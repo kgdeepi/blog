@@ -1,0 +1,14 @@
+class CreateBiodata < ActiveRecord::Migration
+  def change
+    create_table :biodata do |t|
+      t.integer :user_id
+      t.string :name
+      t.date :birthday
+      t.text :biodata
+      t.string :color
+      t.string :twitter
+
+      t.timestamps
+    end
+  end
+end

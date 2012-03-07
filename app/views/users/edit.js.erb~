@@ -1,0 +1,1 @@
+$("<%= escape_javascript render(:file => 'users/edit.html.erb') %>").insertBefore('#ye');

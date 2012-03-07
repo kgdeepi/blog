@@ -1,0 +1,12 @@
+class AddcolumnToArtiss < ActiveRecord::Migration
+  def up
+	add_column :articles, :except, :string
+	add_column :articles, :address, :string
+
+  end
+
+  def down
+	remove_column :articles, :except
+	remove_column :articles, :address
+  end
+end

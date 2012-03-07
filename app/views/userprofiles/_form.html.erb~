@@ -1,0 +1,21 @@
+<%= form_for(@userprofile) do |f|%>
+<div class="field">
+<%= f.label:Name%>
+<%= f.text_field:name%>
+</div>
+
+<div class="field">
+<%= f.label:DOB%>
+<%= f.text_field:dob%>
+</div>
+
+<div class="field">
+<%= f.label:Biodata%>
+<%= f.text_field:biodata%>
+</div>
+
+<div class="actions">
+<%= f.submit %>
+</div>
+<%end%>
+

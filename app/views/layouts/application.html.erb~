@@ -1,0 +1,35 @@
+<head>
+<link href="/assets/style.css" rel="stylesheet" type="text/css" />
+<%= stylesheet_link_tag "application" %>
+<%= javascript_include_tag 'jquery-1.4.2.min', 'rails', 'application' %>
+<%= csrf_meta_tags %>
+</head>
+<body>
+<div id="header">
+<h1><%= link_to "Blog", articles_path %></h1>
+<div id="user_bar">
+<% if logged_in? %>
+<%= link_to "New Article", new_article_path,:remote=>true,:format=>:js %> |
+<%= link_to "Edit Password", edit_user_path(current_user),:remote=>true, :format=>:js %> |
+<%= link_to "Edit Profile", edit_userprofile_path(current_user), :remote=>true, :format=>:js %> |
+<%= link_to "Logout", logout_path %>
+<% else %>
+<%= link_to "Login", login_path %>
+<%= link_to "New User", new_user_path %>
+<% end %>
+</div>
+</div>
+<div id="main">
+<%= content_tag(:p, notice, :class => 'notice') if notice.present? %>
+<%= content_tag(:p, alert, :class => 'alert') if alert.present? %>
+<div id="ye">
+<%= yield %>
+</div>
+</div>
+<div id="footer">
+A simple blog built for the book
+<a href="http://beginningrails.com">Beginning Rails 3</a>
+</div>
+
+</body>
+</html>

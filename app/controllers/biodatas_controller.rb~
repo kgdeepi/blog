@@ -1,0 +1,32 @@
+class BiodatasController < ApplicationController
+
+def new
+	@biodata=Biodata.new
+	end
+
+def create
+	@biodata = Biodata.new(params[:biodata])
+	@biodata.user_id=current_user.id
+	respond_to do |format|
+if @biodata.save
+format.html { redirect_to articles_path, :notice => 'profile created' }
+else
+	format.html { render :action => "new" }
+end
+end
+end
+
+def edit
+@biodata=Biodata.find_by_user_id(current_user.id)
+end
+
+def update
+p params[:biodata]
+@biodata=Biodata.find_by_user_id(current_user.id)
+	if @biodata.update_attributes(params[:biodata])
+redirect_to articles_path, :notice => "profile successfully updated."
+        else
+        render :edit
+	end
+	end
+end

@@ -1,0 +1,10 @@
+class CreateArtis < ActiveRecord::Migration
+  def change
+    create_table :artis do |t|
+	t.string :title
+	t.datetime :published_at
+	t.text :body, :limit=>100
+      t.timestamps
+    end
+  end
+end

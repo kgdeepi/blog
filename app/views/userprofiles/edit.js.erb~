@@ -1,0 +1,2 @@
+$("<%= escape_javascript render(:file => 'userprofiles/new.html.erb') %>").insertBefore('#ye');
+
